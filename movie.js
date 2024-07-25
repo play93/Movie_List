@@ -20,12 +20,19 @@ fetch(URL)
 .catch(error => console.error('Error:', error));
 
 
-//영화 카드 생성
+//영화 카드 생성 함수
 function mkCard(movie) {
   
   const card = document.creatElement('div');
   card.className = "movie_card"
 
+  //평점(최대10)을 받아와 별(최대5개)로 표시 
+  
+  /*
+    평점을 2로 나눈 몫을 유효 별점으로 표시하고 
+    5에서 유효별점 만큼 뺀 값을 빈 별점으로 표시
+  */
+  
   const fullStar = Math.floor(movie.vote_average / 2);
   const emptyStar = 5 - fullStar;
 
@@ -37,6 +44,7 @@ function mkCard(movie) {
     stars += '☆';
   }
 
+  //html생성
   card.innerHTML=`
     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
     <h3>${movie.title}</h3>
