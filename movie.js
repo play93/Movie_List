@@ -26,11 +26,22 @@ function mkCard(movie) {
   const card = document.creatElement('div');
   card.className = "movie_card"
 
+  const fullStar = Math.floor(movie.vote_average / 2);
+  const emptyStar = 5 - fullStar;
+
+  let stars = '';
+  for(let i=0;i<fullStar;i++){
+    stars += '★';
+  }
+  for(let i=0;i<emptyStar;i++){
+    stars += '☆';
+  }
+
   card.innerHTML=`
-    <img src="" alt="" />
-    <h3>영화제목</h3>
-    <p>평점: 0.1</p>
-    <p>줄거리 요약</p>
+    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+    <h3>${movie.title}</h3>
+    <p>평점: ${stars}<span>${movie.vote_average}</span></p>
+    <p>${movie.overview}</p>
   `
   card.addEventListner('click',function(){
     alert(`영화의 ID: ${movie.id}`);
