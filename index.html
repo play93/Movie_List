@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-	<link rel="stylesheet" href="./style.css">
+  <body>
+    <header class="title">
+      <div class="header_wrap">
+        <h1>TOP20 movie</h1>
 
-</head>
+        <form>
+          <input id="search_keyword" type="text" placeholder="검색어를 입력하세요 . ." />
+          <button id="search_btn">검색</button>
+        </form>
+      </div>
+    </header>
 
-<body>
-	<header class="title">
-		<div class="header_wrap">
-			<h1>TOP20 movie</h1>
+    <section class="movie_container"></section>
 
-			<form>
-				<input id="search_keyword" type="text" placeholder="검색어를 입력하세요 . ." />
-				<button id="search_btn">검색</button>
-			</form>
-		</div>
-	</header>
-
-	<section class="movie_container">
-
-	</section>
-
-
-
-	<script src="./movie.js"></script>
-
-</body>
-
+    <script src="./movie.js"></script>
+  </body>
 </html>
